@@ -47,16 +47,16 @@ export default function LandingPage() {
 
   const FAQS = [
     {
-      q: "How does Khata keep my accounts balanced automatically?",
-      a: "Every time you enter a sale, payment, or expense, Khata automatically updates your customer balance, cash in hand, and inventory. No manual calculation or complex accounting knowledge is needed.",
+      q: "How does FISTA Accounts keep my accounts balanced automatically?",
+      a: "Every time you enter a sale, payment, or expense, FISTA Accounts automatically updates your customer balance, cash in hand, and inventory. No manual calculation or complex accounting knowledge is needed.",
     },
     {
       q: "How do I share bills with customers on WhatsApp?",
-      a: "With one tap on any sale, Khata generates an invoice summary that you can send directly to your customer on WhatsApp with the amount due and bill link.",
+      a: "With one tap on any sale, FISTA Accounts generates an invoice summary that you can send directly to your customer on WhatsApp with the amount due and bill link.",
     },
     {
       q: "Can I print receipts on small thermal POS receipt printers?",
-      a: "Yes. Khata has built-in support for 80mm and 58mm thermal counter printers as well as standard full-page A4 invoices.",
+      a: "Yes. FISTA Accounts has built-in support for 80mm and 58mm thermal counter printers as well as standard full-page A4 invoices.",
     },
     {
       q: "Can I add cashiers or staff without showing business profits?",
@@ -64,7 +64,7 @@ export default function LandingPage() {
     },
     {
       q: "Can I manage more than one shop or branch?",
-      a: "Yes. You can create multiple businesses inside one Khata account and switch between them anytime with a single click.",
+      a: "Yes. You can create multiple businesses inside one FISTA Accounts account and switch between them anytime with a single click.",
     },
     {
       q: "Is my business data secure and backed up?",
@@ -686,10 +686,10 @@ export default function LandingPage() {
             Why Upgrade
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight mt-3">
-            Why businesses choose Khata
+            Why businesses choose FISTA Accounts
           </h2>
           <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-2">
-            See how Khata transforms traditional bookkeeping into an effortless
+            See how FISTA Accounts transforms traditional bookkeeping into an effortless
             digital process.
           </p>
         </motion.div>
@@ -708,7 +708,7 @@ export default function LandingPage() {
                   Generic Spreadsheets
                 </th>
                 <th className="py-4 px-5 font-extrabold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/[0.06]">
-                  Khata Digital System
+                  FISTA Accounts Digital System
                 </th>
               </tr>
             </thead>
@@ -865,7 +865,7 @@ export default function LandingPage() {
                 href="/login"
                 className="px-6 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-semibold text-xs sm:text-sm border border-white/10 transition-all active:scale-[0.98]"
               >
-                Sign In to Khata
+                Sign In to FISTA Accounts
               </Link>
             </div>
           </div>
@@ -881,7 +881,7 @@ export default function LandingPage() {
             <KhataLogo size={30} />
             <div>
               <span className="font-bold text-sm text-slate-900 dark:text-white">
-                Khata
+                FISTA Accounts
               </span>
               <p className="text-[10px] text-slate-400">
                 Digital Accounting &amp; Ledger Bookkeeping System

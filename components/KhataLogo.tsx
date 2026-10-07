@@ -80,7 +80,7 @@ export default function KhataLogo({
 
       {showText && (
         <span className={`tracking-tight text-neutral-900 dark:text-neutral-100 ${textClassName}`}>
-          Khata
+          FISTA Accounts
         </span>
       )}
     </div>

@@ -34,7 +34,7 @@ export default function AuthLayout({
           <KhataLogo size={36} />
           <div>
             <span className="font-bold text-xl tracking-tight text-neutral-900 dark:text-white block leading-none">
-              Khata
+              FISTA Accounts
             </span>
             <span className="text-[10px] uppercase font-bold tracking-widest text-neutral-500 dark:text-neutral-400">
               Business Accounts &amp; Billing

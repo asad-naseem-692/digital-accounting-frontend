@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Khata — Digital Accounting",
+  title: "FISTA Accounts — Digital Accounting",
   description: "Digital ledger and accounting system for shops and businesses",
   icons: {
     icon: "/icon.svg",

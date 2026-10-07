@@ -85,7 +85,7 @@ export default function LoginPage() {
           Welcome back
         </h1>
         <p className="text-slate-500 dark:text-slate-400 text-xs mt-1.5">
-          Sign in to access your Khata business accounts
+          Sign in to access your FISTA Accounts
         </p>
       </div>
 

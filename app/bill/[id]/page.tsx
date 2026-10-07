@@ -101,7 +101,7 @@ export default function PublicBillPage({
           <div className="flex items-center gap-2">
             <KhataLogo size={22} />
             <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-              Khata • Digital Invoice &amp; Receipt
+              FISTA Accounts • Digital Invoice &amp; Receipt
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -286,7 +286,7 @@ export default function PublicBillPage({
 
         {/* Footer info */}
         <p className="text-center text-[11px] text-gray-400">
-          Generated via Digital Khata &amp; Bookkeeping System
+          Generated via FISTA Accounts &amp; Bookkeeping System
         </p>
       </div>
 

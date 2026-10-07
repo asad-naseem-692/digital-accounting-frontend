@@ -183,7 +183,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
           <div className="text-slate-500 dark:text-slate-400 text-xs font-medium tracking-wide">
-            Loading Khata...
+            Loading FISTA Accounts...
           </div>
         </div>
       </div>
@@ -204,7 +204,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           </button>
           <KhataLogo size={28} />
           <span className="font-semibold text-sm tracking-tight text-slate-900 dark:text-white">
-            Khata
+            FISTA Accounts
           </span>
         </div>
 
@@ -231,7 +231,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <KhataLogo size={32} />
             <div>
               <div className="font-bold text-sm text-slate-900 dark:text-white tracking-tight leading-tight">
-                Khata
+                FISTA Accounts
               </div>
               <div className="text-[10px] text-slate-400 dark:text-slate-400 font-medium">
                 Business Accounts

@@ -61,7 +61,7 @@ export default function SignupPage() {
 
       clearActiveBusinessId();
       setSession(res.user, res.access_token);
-      showToast("Account created successfully! Welcome to Khata.", "success");
+      showToast("Account created successfully! Welcome to FISTA Accounts.", "success");
       router.push("/businesses");
     } catch (err: unknown) {
       if (err instanceof Error) {
@@ -90,7 +90,7 @@ export default function SignupPage() {
           Create an account
         </h1>
         <p className="text-slate-500 dark:text-slate-400 text-xs mt-1.5">
-          Join businesses managing their daily accounts on Khata
+          Join businesses managing their daily accounts on FISTA Accounts
         </p>
       </div>
 
