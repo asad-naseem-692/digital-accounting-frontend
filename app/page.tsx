@@ -48,28 +48,28 @@ export default function LandingPage() {
   const FAQS = [
     {
       q: "How does Khata keep my accounts balanced automatically?",
-      a: "Every time you enter a sale, payment, or expense, Khata automatically updates your customer balance, cash in hand, and inventory. No manual calculation or complex accounting knowledge is needed."
+      a: "Every time you enter a sale, payment, or expense, Khata automatically updates your customer balance, cash in hand, and inventory. No manual calculation or complex accounting knowledge is needed.",
     },
     {
       q: "How do I share bills with customers on WhatsApp?",
-      a: "With one tap on any sale, Khata generates an invoice summary that you can send directly to your customer on WhatsApp with the amount due and bill link."
+      a: "With one tap on any sale, Khata generates an invoice summary that you can send directly to your customer on WhatsApp with the amount due and bill link.",
     },
     {
       q: "Can I print receipts on small thermal POS receipt printers?",
-      a: "Yes. Khata has built-in support for 80mm and 58mm thermal counter printers as well as standard full-page A4 invoices."
+      a: "Yes. Khata has built-in support for 80mm and 58mm thermal counter printers as well as standard full-page A4 invoices.",
     },
     {
       q: "Can I add cashiers or staff without showing business profits?",
-      a: "Yes. You can invite staff members with restricted permissions so they can enter sales and customer payments without seeing your net profit, total investment, or sensitive reports."
+      a: "Yes. You can invite staff members with restricted permissions so they can enter sales and customer payments without seeing your net profit, total investment, or sensitive reports.",
     },
     {
       q: "Can I manage more than one shop or branch?",
-      a: "Yes. You can create multiple businesses inside one Khata account and switch between them anytime with a single click."
+      a: "Yes. You can create multiple businesses inside one Khata account and switch between them anytime with a single click.",
     },
     {
       q: "Is my business data secure and backed up?",
-      a: "All records are securely encrypted and automatically backed up to the cloud. You will never lose your customer ledgers or transaction history, even if you change your phone or computer."
-    }
+      a: "All records are securely encrypted and automatically backed up to the cloud. You will never lose your customer ledgers or transaction history, even if you change your phone or computer.",
+    },
   ];
 
   return (
@@ -90,22 +90,34 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Brand Logo with Official Khata Digital System Icon */}
-            <Link href="/" className="flex items-center gap-2.5 group cursor-pointer">
+            <Link
+              href="/"
+              className="flex items-center gap-2.5 group cursor-pointer"
+            >
               <KhataLogo size={34} />
               <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white leading-none">
-                Khata
+                FISTA Accounts
               </span>
             </Link>
 
             {/* Exactly 3 Clean Desktop Navigation Links */}
             <div className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-600 dark:text-slate-300">
-              <a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <a
+                href="#features"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
                 Features
               </a>
-              <a href="#how-it-works" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <a
+                href="#how-it-works"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
                 How It Works
               </a>
-              <a href="#faq" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              <a
+                href="#faq"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
                 FAQ
               </a>
             </div>
@@ -138,12 +150,32 @@ export default function LandingPage() {
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 )}
               </button>
@@ -229,7 +261,9 @@ export default function LandingPage() {
             transition={{ duration: 0.6, delay: 0.12 }}
             className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl"
           >
-            Record daily sales, track customer udhaar, and manage shop cash in seconds. Send bills directly on WhatsApp and keep your accounts automatically balanced — no accounting knowledge required.
+            Record daily sales, track customer udhaar, and manage shop cash in
+            seconds. Send bills directly on WhatsApp and keep your accounts
+            automatically balanced — no accounting knowledge required.
           </motion.p>
 
           {/* CTAs */}
@@ -262,16 +296,20 @@ export default function LandingPage() {
             className="mt-10 flex flex-wrap items-center gap-6 text-xs text-neutral-500 dark:text-neutral-400 font-medium"
           >
             <span className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> Automated Double-Entry
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> Automated
+              Double-Entry
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> WhatsApp Bill Sharing
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> WhatsApp Bill
+              Sharing
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> Thermal POS Ready
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> Thermal POS
+              Ready
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> Multi-Branch Support
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> Multi-Branch
+              Support
             </span>
           </motion.div>
         </div>
@@ -280,7 +318,10 @@ export default function LandingPage() {
       {/* ------------------------------------------------------------------- */}
       {/* 3. CORE FEATURES - BEAUTIFUL FISTA-STYLE DARK HARMONY CARDS        */}
       {/* ------------------------------------------------------------------- */}
-      <section id="features" className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8">
+      <section
+        id="features"
+        className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -296,12 +337,12 @@ export default function LandingPage() {
               Everything your shop or business needs
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed">
-              Designed specifically for merchants, distributors, and business owners who want reliable accounts without complicated software.
+              Designed specifically for merchants, distributors, and business
+              owners who want reliable accounts without complicated software.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             {/* Feature 1: Customer Udhaar & Digital Khata */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -317,7 +358,9 @@ export default function LandingPage() {
                 Customer &amp; Supplier Udhaar
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Record credit sales and payments in 3 seconds. Each customer gets their own automated digital ledger with real-time balance calculations.
+                Record credit sales and payments in 3 seconds. Each customer
+                gets their own automated digital ledger with real-time balance
+                calculations.
               </p>
             </motion.div>
 
@@ -336,7 +379,9 @@ export default function LandingPage() {
                 1-Tap WhatsApp Billing
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Send professional digital invoices and polite payment reminders directly to your customer&apos;s WhatsApp with full transaction breakdown.
+                Send professional digital invoices and polite payment reminders
+                directly to your customer&apos;s WhatsApp with full transaction
+                breakdown.
               </p>
             </motion.div>
 
@@ -355,7 +400,9 @@ export default function LandingPage() {
                 Daily Cash Drawer &amp; Expenses
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Track opening cash, daytime expenses (shop electricity, chai, courier), and counter cash in. Reconcile daily drawer balance with zero discrepancies.
+                Track opening cash, daytime expenses (shop electricity, chai,
+                courier), and counter cash in. Reconcile daily drawer balance
+                with zero discrepancies.
               </p>
             </motion.div>
 
@@ -374,7 +421,8 @@ export default function LandingPage() {
                 Inventory &amp; Low-Stock Alerts
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Product stock auto-decreases when you punch sales and increases on purchases. Get instant alerts when items reach low threshold.
+                Product stock auto-decreases when you punch sales and increases
+                on purchases. Get instant alerts when items reach low threshold.
               </p>
             </motion.div>
 
@@ -393,7 +441,9 @@ export default function LandingPage() {
                 Thermal POS Receipt Printing
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Instant counter receipts formatted specifically for standard 80mm and 58mm thermal printers. Perfect for grocery stores and busy counters.
+                Instant counter receipts formatted specifically for standard
+                80mm and 58mm thermal printers. Perfect for grocery stores and
+                busy counters.
               </p>
             </motion.div>
 
@@ -412,10 +462,11 @@ export default function LandingPage() {
                 Staff Access &amp; Privacy Lock
               </h3>
               <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-                Give cashiers permission to enter transactions without exposing your net profit margins, total capital, or financial ledger history.
+                Give cashiers permission to enter transactions without exposing
+                your net profit margins, total capital, or financial ledger
+                history.
               </p>
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -423,7 +474,10 @@ export default function LandingPage() {
       {/* ------------------------------------------------------------------- */}
       {/* 4. HOW IT WORKS - 3 SIMPLE STEPS                                    */}
       {/* ------------------------------------------------------------------- */}
-      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section
+        id="how-it-works"
+        className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -438,12 +492,12 @@ export default function LandingPage() {
             Start in 3 easy steps
           </h2>
           <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-3">
-            No accounting training or complex setup required. You will be up and running in less than two minutes.
+            No accounting training or complex setup required. You will be up and
+            running in less than two minutes.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          
           {/* Step 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -459,7 +513,9 @@ export default function LandingPage() {
               Add Your Shop &amp; Customers
             </h3>
             <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-              Create your business profile, add your regular customers or suppliers with their phone numbers, and set up your initial stock items.
+              Create your business profile, add your regular customers or
+              suppliers with their phone numbers, and set up your initial stock
+              items.
             </p>
           </motion.div>
 
@@ -478,7 +534,8 @@ export default function LandingPage() {
               Record Sales &amp; Payments
             </h3>
             <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-              Punch sales, enter cash collections, or record shop expenses. Every ledger balance and inventory count updates instantaneously.
+              Punch sales, enter cash collections, or record shop expenses.
+              Every ledger balance and inventory count updates instantaneously.
             </p>
           </motion.div>
 
@@ -497,17 +554,20 @@ export default function LandingPage() {
               Send Bills &amp; Track Profits
             </h3>
             <p className="text-slate-600 dark:text-slate-300 text-xs mt-2 leading-relaxed">
-              Share instant WhatsApp invoice links, print thermal slips, and view your daily revenue and net profits with crystal clarity.
+              Share instant WhatsApp invoice links, print thermal slips, and
+              view your daily revenue and net profits with crystal clarity.
             </p>
           </motion.div>
-
         </div>
       </section>
 
       {/* ------------------------------------------------------------------- */}
       {/* 5. SOLUTIONS BY INDUSTRY - WHO USES KHATA                           */}
       {/* ------------------------------------------------------------------- */}
-      <section id="solutions" className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8">
+      <section
+        id="solutions"
+        className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -523,12 +583,12 @@ export default function LandingPage() {
               Trusted across diverse retail and wholesale trades
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-3">
-              Tailored workflows that match how actual local businesses operate every single day.
+              Tailored workflows that match how actual local businesses operate
+              every single day.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -543,7 +603,8 @@ export default function LandingPage() {
                 Retail &amp; Supermarkets
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-xs mt-1.5 leading-relaxed">
-                Fast counter billing, quick thermal POS printing, and neighborhood monthly customer credit tracking.
+                Fast counter billing, quick thermal POS printing, and
+                neighborhood monthly customer credit tracking.
               </p>
             </motion.div>
 
@@ -561,7 +622,8 @@ export default function LandingPage() {
                 Wholesalers &amp; Distributors
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-xs mt-1.5 leading-relaxed">
-                Large bulk party ledgers, partial payment tracking, supply receipts, and customer aging statements.
+                Large bulk party ledgers, partial payment tracking, supply
+                receipts, and customer aging statements.
               </p>
             </motion.div>
 
@@ -579,7 +641,8 @@ export default function LandingPage() {
                 Mobile &amp; Electronics
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-xs mt-1.5 leading-relaxed">
-                Track unit inventory, punch warranty invoices, and maintain customer installment records with ease.
+                Track unit inventory, punch warranty invoices, and maintain
+                customer installment records with ease.
               </p>
             </motion.div>
 
@@ -597,10 +660,10 @@ export default function LandingPage() {
                 Pharmacies &amp; Boutiques
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-xs mt-1.5 leading-relaxed">
-                Itemized billing, supplier purchase invoices, and automated daily cash book reconciliation.
+                Itemized billing, supplier purchase invoices, and automated
+                daily cash book reconciliation.
               </p>
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -608,7 +671,10 @@ export default function LandingPage() {
       {/* ------------------------------------------------------------------- */}
       {/* 6. COMPARISON TABLE - KHATA VS PAPER VS SPREADSHEETS                */}
       {/* ------------------------------------------------------------------- */}
-      <section id="comparison" className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <section
+        id="comparison"
+        className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -623,7 +689,8 @@ export default function LandingPage() {
             Why businesses choose Khata
           </h2>
           <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-2">
-            See how Khata transforms traditional bookkeeping into an effortless digital process.
+            See how Khata transforms traditional bookkeeping into an effortless
+            digital process.
           </p>
         </motion.div>
 
@@ -631,9 +698,15 @@ export default function LandingPage() {
           <table className="w-full text-left text-xs">
             <thead>
               <tr className="border-b border-slate-200/80 dark:border-white/[0.08] bg-slate-50 dark:bg-[#141923]">
-                <th className="py-4 px-5 font-bold text-slate-900 dark:text-white">Capability</th>
-                <th className="py-4 px-5 font-bold text-slate-500 dark:text-slate-400">Paper Notebooks</th>
-                <th className="py-4 px-5 font-bold text-slate-500 dark:text-slate-400">Generic Spreadsheets</th>
+                <th className="py-4 px-5 font-bold text-slate-900 dark:text-white">
+                  Capability
+                </th>
+                <th className="py-4 px-5 font-bold text-slate-500 dark:text-slate-400">
+                  Paper Notebooks
+                </th>
+                <th className="py-4 px-5 font-bold text-slate-500 dark:text-slate-400">
+                  Generic Spreadsheets
+                </th>
                 <th className="py-4 px-5 font-extrabold text-neutral-900 dark:text-white bg-neutral-100 dark:bg-white/[0.06]">
                   Khata Digital System
                 </th>
@@ -644,8 +717,12 @@ export default function LandingPage() {
                 <td className="py-3.5 px-5 font-semibold text-slate-900 dark:text-white">
                   Automatic Math &amp; Balance Updates
                 </td>
-                <td className="py-3.5 px-5 text-rose-500">Manual (error-prone)</td>
-                <td className="py-3.5 px-5 text-amber-500">Formula dependent</td>
+                <td className="py-3.5 px-5 text-rose-500">
+                  Manual (error-prone)
+                </td>
+                <td className="py-3.5 px-5 text-amber-500">
+                  Formula dependent
+                </td>
                 <td className="py-3.5 px-5 font-bold text-emerald-600 dark:text-emerald-400 bg-neutral-100/50 dark:bg-white/[0.04]">
                   ✓ Instant &amp; 100% Guaranteed
                 </td>
@@ -655,7 +732,9 @@ export default function LandingPage() {
                   1-Click WhatsApp Invoices
                 </td>
                 <td className="py-3.5 px-5 text-rose-500">Not possible</td>
-                <td className="py-3.5 px-5 text-rose-500">Complex export required</td>
+                <td className="py-3.5 px-5 text-rose-500">
+                  Complex export required
+                </td>
                 <td className="py-3.5 px-5 font-bold text-emerald-600 dark:text-emerald-400 bg-neutral-100/50 dark:bg-white/[0.04]">
                   ✓ 1-Tap Built In
                 </td>
@@ -665,7 +744,9 @@ export default function LandingPage() {
                   Thermal POS Receipt Support
                 </td>
                 <td className="py-3.5 px-5 text-rose-500">Handwritten only</td>
-                <td className="py-3.5 px-5 text-rose-500">Difficult formatting</td>
+                <td className="py-3.5 px-5 text-rose-500">
+                  Difficult formatting
+                </td>
                 <td className="py-3.5 px-5 font-bold text-emerald-600 dark:text-emerald-400 bg-neutral-100/50 dark:bg-white/[0.04]">
                   ✓ 80mm &amp; 58mm POS Ready
                 </td>
@@ -684,8 +765,12 @@ export default function LandingPage() {
                 <td className="py-3.5 px-5 font-semibold text-slate-900 dark:text-white">
                   Cloud Backup &amp; Device Sync
                 </td>
-                <td className="py-3.5 px-5 text-rose-500">Risk of loss/theft/damage</td>
-                <td className="py-3.5 px-5 text-amber-500">Manual upload needed</td>
+                <td className="py-3.5 px-5 text-rose-500">
+                  Risk of loss/theft/damage
+                </td>
+                <td className="py-3.5 px-5 text-amber-500">
+                  Manual upload needed
+                </td>
                 <td className="py-3.5 px-5 font-bold text-emerald-600 dark:text-emerald-400 bg-neutral-100/50 dark:bg-white/[0.04]">
                   ✓ Automatic Encrypted Cloud Sync
                 </td>
@@ -698,7 +783,10 @@ export default function LandingPage() {
       {/* ------------------------------------------------------------------- */}
       {/* 7. FREQUENTLY ASKED QUESTIONS (ACCORDION)                           */}
       {/* ------------------------------------------------------------------- */}
-      <section id="faq" className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8">
+      <section
+        id="faq"
+        className="py-20 bg-slate-100/60 dark:bg-[#141923] border-y border-slate-200/80 dark:border-white/[0.08] px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -714,7 +802,8 @@ export default function LandingPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 text-xs sm:text-sm mt-2">
-              Everything you need to know about setting up and using Khata for your daily business.
+              Everything you need to know about setting up and using Khata for
+              your daily business.
             </p>
           </motion.div>
 
@@ -732,7 +821,9 @@ export default function LandingPage() {
                   <span>{faq.q}</span>
                   <ChevronDown
                     className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      activeFaq === idx ? "rotate-180 text-neutral-900 dark:text-white" : ""
+                      activeFaq === idx
+                        ? "rotate-180 text-neutral-900 dark:text-white"
+                        : ""
                     }`}
                   />
                 </button>
@@ -760,7 +851,8 @@ export default function LandingPage() {
               Ready to simplify your business accounts?
             </h2>
             <p className="mt-3 text-xs sm:text-sm text-neutral-300 dark:text-neutral-400 leading-relaxed">
-              Join businesses managing their daily sales, customer ledgers, and cash with total confidence.
+              Join businesses managing their daily sales, customer ledgers, and
+              cash with total confidence.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -788,7 +880,9 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <KhataLogo size={30} />
             <div>
-              <span className="font-bold text-sm text-slate-900 dark:text-white">Khata</span>
+              <span className="font-bold text-sm text-slate-900 dark:text-white">
+                Khata
+              </span>
               <p className="text-[10px] text-slate-400">
                 Digital Accounting &amp; Ledger Bookkeeping System
               </p>
@@ -796,16 +890,28 @@ export default function LandingPage() {
           </div>
 
           <div className="flex items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
-            <a href="#features" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a
+              href="#features"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
               Features
             </a>
-            <a href="#how-it-works" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a
+              href="#how-it-works"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
               How It Works
             </a>
-            <a href="#faq" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a
+              href="#faq"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
               FAQ
             </a>
-            <Link href="/login" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <Link
+              href="/login"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
               Sign In
             </Link>
           </div>
@@ -815,7 +921,6 @@ export default function LandingPage() {
           </p>
         </div>
       </footer>
-
     </div>
   );
 }
