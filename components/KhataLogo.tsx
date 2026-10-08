@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useId } from "react";
 
 interface KhataLogoProps {
   className?: string;
@@ -15,9 +15,17 @@ export default function KhataLogo({
   showText = false,
   textClassName = "text-base font-bold",
 }: KhataLogoProps) {
+  // Generate unique IDs per instance to prevent SVG gradient clipping and cross-element collision bugs in desktop/mobile
+  const rawId = useId();
+  const uid = rawId.replace(/[^a-zA-Z0-9]/g, "");
+  const coverId = `fl_cov_${uid}`;
+  const digitalId = `fl_dig_${uid}`;
+  const ribbonId = `fl_rib_${uid}`;
+  const pageRId = `fl_pgr_${uid}`;
+
   return (
     <div className="inline-flex items-center gap-2.5 shrink-0 select-none">
-      {/* Unboxed open diary logo - No enclosing container box */}
+      {/* Unboxed open diary logo - Completely standalone, identical across all screen sizes */}
       <div
         className={`relative flex items-center justify-center shrink-0 transition-transform duration-200 hover:scale-105 ${className}`}
         style={{ width: size, height: size }}
@@ -30,26 +38,26 @@ export default function KhataLogo({
         >
           <defs>
             {/* Executive Blue Cover Gradient */}
-            <linearGradient id="od_cover" x1="10" y1="15" x2="90" y2="85" gradientUnits="userSpaceOnUse">
+            <linearGradient id={coverId} x1="10" y1="15" x2="90" y2="85" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#1E3A8A" />
               <stop offset="50%" stopColor="#2563EB" />
               <stop offset="100%" stopColor="#0F172A" />
             </linearGradient>
 
             {/* Digital Growth Pulse Gradient */}
-            <linearGradient id="od_digital" x1="56" y1="64" x2="82" y2="38" gradientUnits="userSpaceOnUse">
+            <linearGradient id={digitalId} x1="56" y1="64" x2="82" y2="38" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#06B6D4" />
               <stop offset="100%" stopColor="#10B981" />
             </linearGradient>
 
             {/* Bookmark Ribbon Gradient */}
-            <linearGradient id="od_ribbon" x1="47" y1="10" x2="53" y2="28" gradientUnits="userSpaceOnUse">
+            <linearGradient id={ribbonId} x1="47" y1="10" x2="53" y2="28" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#10B981" />
               <stop offset="100%" stopColor="#059669" />
             </linearGradient>
 
-            {/* Right Folio Soft Tint */}
-            <linearGradient id="od_page_r" x1="52" y1="16" x2="84" y2="82" gradientUnits="userSpaceOnUse">
+            {/* Right Folio Soft High-Contrast Tint */}
+            <linearGradient id={pageRId} x1="52" y1="16" x2="84" y2="82" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="#F8FAFC" />
               <stop offset="100%" stopColor="#E2E8F0" />
             </linearGradient>
@@ -58,7 +66,7 @@ export default function KhataLogo({
           {/* Open Diary Cover Backing (No enclosing box) */}
           <path
             d="M12 24C12 18.4772 16.4772 14 22 14H48L50 16L52 14H78C83.5228 14 88 18.4772 88 24V76C88 81.5228 83.5228 86 78 86H52L50 84L48 86H22C16.4772 86 12 81.5228 12 76V24Z"
-            fill="url(#od_cover)"
+            fill={`url(#${coverId})`}
           />
 
           {/* Left Ledger Page (Bright White High-Contrast Folio) */}
@@ -70,7 +78,7 @@ export default function KhataLogo({
           {/* Right Ledger Page (Soft Digital High-Contrast Folio) */}
           <path
             d="M52 16H78C81.3137 16 84 18.6863 84 22V76C84 79.3137 81.3137 82 78 82H52V16Z"
-            fill="url(#od_page_r)"
+            fill={`url(#${pageRId})`}
           />
 
           {/* Center Spine Fold */}
@@ -98,7 +106,7 @@ export default function KhataLogo({
           {/* Digital Waveform Line */}
           <path
             d="M58 64L64 54L71 58L79 40"
-            stroke="url(#od_digital)"
+            stroke={`url(#${digitalId})`}
             strokeWidth="3.2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -114,7 +122,7 @@ export default function KhataLogo({
           {/* Top Silk Ribbon Bookmark */}
           <path
             d="M47 11H53V26L50 23L47 26V11Z"
-            fill="url(#od_ribbon)"
+            fill={`url(#${ribbonId})`}
           />
         </svg>
       </div>

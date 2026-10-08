@@ -283,9 +283,9 @@ export default function DashboardPage() {
       </div>
 
       {/* Split Section: Recent Activity & Low Stock */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 min-w-0">
         {/* Recent Activity */}
-        <div className="lg:col-span-8 bg-white dark:bg-[#181d26] rounded-2xl border border-slate-200/80 dark:border-white/[0.08] p-5 shadow-xs">
+        <div className="lg:col-span-8 min-w-0 bg-white dark:bg-[#181d26] rounded-2xl border border-slate-200/80 dark:border-white/[0.08] p-5 shadow-xs">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
@@ -369,7 +369,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Low Stock Alert */}
-        <div className="lg:col-span-4 bg-white dark:bg-[#181d26] rounded-2xl border border-slate-200/80 dark:border-white/[0.08] p-5 shadow-xs flex flex-col justify-between">
+        <div className="lg:col-span-4 min-w-0 bg-white dark:bg-[#181d26] rounded-2xl border border-slate-200/80 dark:border-white/[0.08] p-5 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div>

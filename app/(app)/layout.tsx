@@ -191,7 +191,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#11141a] flex flex-col md:flex-row text-slate-900 dark:text-slate-100 transition-colors antialiased">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-slate-50 dark:bg-[#11141a] flex flex-col md:flex-row text-slate-900 dark:text-slate-100 transition-colors antialiased">
       {/* Mobile Top Header */}
       <div className="md:hidden bg-white/95 dark:bg-[#161a23]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-white/[0.08] px-4 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-2.5">
@@ -218,9 +218,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
       {/* Modern High-End Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-[#11141a] border-r border-slate-200/80 dark:border-white/[0.08] flex flex-col transition-transform duration-200 ease-in-out md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-[#11141a] border-r border-slate-200/80 dark:border-white/[0.08] flex flex-col transition-transform duration-200 ease-in-out shrink-0 md:translate-x-0 ${
           isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } md:static md:h-screen md:sticky md:top-0`}
+        } md:sticky md:top-0 md:h-screen`}
       >
         {/* Brand Header */}
         <div className="h-14 px-4 border-b border-slate-200/80 dark:border-white/[0.08] flex items-center justify-between">
@@ -403,7 +403,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Main Viewport */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 w-full overflow-x-hidden">
         {/* Modern Top Header on Desktop - CLEAN & WITHOUT DUPLICATE BUTTONS */}
         <header className="hidden md:flex h-14 bg-white/80 dark:bg-[#11141a]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/[0.08] px-6 sm:px-8 items-center justify-between sticky top-0 z-30">
           <div className="flex items-center gap-3 text-xs">
@@ -439,7 +439,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </header>
 
         {/* Page Content Container */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto min-w-0">
           {children}
         </main>
       </div>
