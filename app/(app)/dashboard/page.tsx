@@ -18,7 +18,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock,
-  Lock,
 } from "lucide-react";
 
 function formatCurrency(amount: number): string {
@@ -27,16 +26,14 @@ function formatCurrency(amount: number): string {
 
 export default function DashboardPage() {
   const { user } = useAuth();
-  const { activeBusiness, canEdit } = useBusiness();
+  const { activeBusiness } = useBusiness();
 
   const [summary, setSummary] = useState<DashboardOverview | null>(null);
   const [lowStockProducts, setLowStockProducts] = useState<Product[]>([]);
   const [recentTransactions, setRecentTransactions] = useState<GeneralLedgerItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const isStaff = user?.account_type === "staff";
-  const isOwner = activeBusiness?.role === "owner" && !isStaff;
-  const canPerformAction = isOwner || Boolean(canEdit);
+  const isOwner = activeBusiness?.role === "owner" && user?.account_type !== "staff";
 
   useEffect(() => {
     if (!activeBusiness) return;
@@ -225,145 +222,62 @@ export default function DashboardPage() {
           </h2>
           <span className="text-xs text-slate-400">One-click entries</span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-          {canPerformAction ? (
-            <Link
-              href="/invoices"
-              className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30 hover:border-emerald-300 dark:hover:border-emerald-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
-            >
-              <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                <FileText className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Sales Invoice</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Bill a customer</div>
-            </Link>
-          ) : (
-            <div
-              title="Requires edit permissions to create invoices"
-              className="p-3.5 rounded-xl border border-slate-200/60 dark:border-white/[0.04] bg-slate-100/50 dark:bg-[#161a22] text-center opacity-60 cursor-not-allowed select-none"
-            >
-              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-2">
-                <FileText className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-600 dark:text-slate-400">Sales Invoice</div>
-              <div className="text-[10px] text-slate-400 mt-0.5 flex items-center justify-center gap-1">
-                <Lock className="w-2.5 h-2.5" /> View Only
-              </div>
+        <div className={`grid grid-cols-2 ${isOwner ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-3`}>
+          <Link
+            href="/invoices"
+            className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30 hover:border-emerald-300 dark:hover:border-emerald-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
+          >
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <FileText className="w-4 h-4" />
             </div>
-          )}
+            <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Sales Invoice</div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Bill a customer</div>
+          </Link>
 
-          {isOwner ? (
-            <Link
-              href="/invoices"
-              className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-blue-50/60 dark:hover:bg-blue-950/30 hover:border-blue-300 dark:hover:border-blue-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
-            >
-              <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                <PackagePlus className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Purchase Bill</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Add inventory</div>
-            </Link>
-          ) : (
-            <div
-              title="Purchase bills can only be created by the Business Owner"
-              className="p-3.5 rounded-xl border border-slate-200/60 dark:border-white/[0.04] bg-slate-100/50 dark:bg-[#161a22] text-center opacity-60 cursor-not-allowed select-none"
-            >
-              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-2">
-                <PackagePlus className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-600 dark:text-slate-400">Purchase Bill</div>
-              <div className="text-[10px] text-amber-600 dark:text-amber-400 mt-0.5 flex items-center justify-center gap-1">
-                <Lock className="w-2.5 h-2.5" /> Owner Only
-              </div>
+          <Link
+            href="/invoices"
+            className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-blue-50/60 dark:hover:bg-blue-950/30 hover:border-blue-300 dark:hover:border-blue-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
+          >
+            <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <PackagePlus className="w-4 h-4" />
             </div>
-          )}
+            <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Purchase Bill</div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Add inventory</div>
+          </Link>
 
-          {canPerformAction ? (
-            <Link
-              href="/transactions"
-              className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-rose-50/60 dark:hover:bg-rose-950/30 hover:border-rose-300 dark:hover:border-rose-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
-            >
-              <div className="w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                <Receipt className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Add Expense</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Shop expenses</div>
-            </Link>
-          ) : (
-            <div
-              title="Requires edit permissions to add expenses"
-              className="p-3.5 rounded-xl border border-slate-200/60 dark:border-white/[0.04] bg-slate-100/50 dark:bg-[#161a22] text-center opacity-60 cursor-not-allowed select-none"
-            >
-              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-2">
-                <Receipt className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-600 dark:text-slate-400">Add Expense</div>
-              <div className="text-[10px] text-slate-400 mt-0.5 flex items-center justify-center gap-1">
-                <Lock className="w-2.5 h-2.5" /> View Only
-              </div>
+          <Link
+            href="/transactions"
+            className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-rose-50/60 dark:hover:bg-rose-950/30 hover:border-rose-300 dark:hover:border-rose-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
+          >
+            <div className="w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <Receipt className="w-4 h-4" />
             </div>
-          )}
+            <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Add Expense</div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Shop expenses</div>
+          </Link>
 
-          {canPerformAction ? (
+          <Link
+            href="/cash-book"
+            className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30 hover:border-emerald-300 dark:hover:border-emerald-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
+          >
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+              <ArrowDownLeft className="w-4 h-4" />
+            </div>
+            <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Receive Payment</div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Customer cash in</div>
+          </Link>
+
+          {isOwner && (
             <Link
               href="/cash-book"
-              className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30 hover:border-emerald-300 dark:hover:border-emerald-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
-            >
-              <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                <ArrowDownLeft className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Receive Payment</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Customer cash in</div>
-            </Link>
-          ) : (
-            <div
-              title="Requires edit permissions to record payments"
-              className="p-3.5 rounded-xl border border-slate-200/60 dark:border-white/[0.04] bg-slate-100/50 dark:bg-[#161a22] text-center opacity-60 cursor-not-allowed select-none"
-            >
-              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-2">
-                <ArrowDownLeft className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-600 dark:text-slate-400">Receive Payment</div>
-              <div className="text-[10px] text-slate-400 mt-0.5 flex items-center justify-center gap-1">
-                <Lock className="w-2.5 h-2.5" /> View Only
-              </div>
-            </div>
-          )}
-
-          {canPerformAction ? (
-            <Link
-              href="/cash-book"
-              title={isStaff ? "Record supplier cash-out payment in Cash Book" : "Pay supplier cash-out"}
               className="p-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#1e2430] hover:bg-amber-50/60 dark:hover:bg-amber-950/30 hover:border-amber-300 dark:hover:border-amber-800/50 transition-all text-center group cursor-pointer active:scale-[0.98]"
             >
               <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 mx-auto flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                 <ArrowUpRight className="w-4 h-4" />
               </div>
               <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">Pay Supplier</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                {isStaff ? "Cash out entry" : "Supplier cash out"}
-              </div>
-              {isStaff && (
-                <div className="mt-1">
-                  <span className="inline-block text-[10px] font-medium px-1.5 py-0.5 rounded bg-amber-100/80 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800/40">
-                    Staff Allowed
-                  </span>
-                </div>
-              )}
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Supplier cash out</div>
             </Link>
-          ) : (
-            <div
-              title="Requires edit permissions to record supplier payments"
-              className="p-3.5 rounded-xl border border-slate-200/60 dark:border-white/[0.04] bg-slate-100/50 dark:bg-[#161a22] text-center opacity-60 cursor-not-allowed select-none"
-            >
-              <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-2">
-                <ArrowUpRight className="w-4 h-4" />
-              </div>
-              <div className="text-xs font-semibold text-slate-600 dark:text-slate-400">Pay Supplier</div>
-              <div className="text-[10px] text-slate-400 mt-0.5 flex items-center justify-center gap-1">
-                <Lock className="w-2.5 h-2.5" /> View Only
-              </div>
-            </div>
           )}
         </div>
       </div>
